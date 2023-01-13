@@ -1,0 +1,462 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+:root {
+    --main-color: #37517e;
+    --secondary-color: #45addf;
+    --shadow-gray: #f3f5fa;
+    --dark-blue: #37517e;
+    --light-gray: #afb9cb;
+    --title-blue: #36507c;
+    --light-blue: #47b2e4;
+    --extra-light-blue: #eff2f8;
+    --transparent-color: rgb(40 58 90 / 90%);
+    --green-color: #28A745;
+    --darker-gray: #999;
+    --blue-hover: #3d99c4;
+    --icon-bg: #E7F5FB;
+}
+
+body {
+    background-image: url("../images/cta-bg.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* Constant Components */
+.my-primary-btn {
+    background-color: var(--secondary-color);
+    color: #fff !important;
+}
+
+.my-primary-btn:hover {
+    background-color: var(--blue-hover);
+}
+
+/* Done Compenents */
+
+/* Start Shwocase */
+section.showcase {
+    background-color: var(--main-color);
+}
+
+@media (max-width: 992px) {
+    .hero-image {
+        width: 50% !important;
+    }
+}
+
+@media (max-width: 786px) {
+    .hero-image {
+        width: 100% !important;
+    }
+}
+
+section.showcase a:last-child:hover {
+    border: 2px solid #fff;
+}
+
+/* Start Partners */
+section.gray-section {
+    background-color: var(--shadow-gray);
+}
+
+section.partners img {
+    filter: grayscale(90%);
+    transition: filter 100ms linear;
+}
+
+section.partners img:hover {
+    filter: grayscale(0%);
+}
+
+/* Start About Us */
+section.about ul {
+    list-style: none;
+    padding: 0;
+}
+
+.section-title h2 {
+    font-weight: bold;
+    color: var(--dark-blue);
+}
+
+.section-title h2::before {
+    display: block;
+    content: "";
+    position: absolute;
+    width: 250px;
+    height: 2px;
+    background-color: var(--light-gray);
+    border-radius: 2px;
+
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.section-title h2::after {
+    display: block;
+    content: "";
+    position: absolute;
+    width: 75px;
+    height: 4px;
+    background-color: var(--light-blue);
+    border-radius: 2px;
+
+    bottom: -21px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+section.about ul li::before {
+    content: "\f560";
+    font-family: FontAwesome;
+    font-size: 18px;
+    padding: 0px 8px;
+    color: var(--light-blue);
+    display: inline-block;
+}
+
+.about a {
+    border-color: var(--secondary-color) !important;
+    color: var(--secondary-color);
+}
+
+
+/* Start Why Us */
+section.why-us {
+    background-color: var(--shadow-gray);
+}
+
+section.why-us h2 {
+    color: var(--dark-blue);
+}
+
+button.accordion-button {
+    color: var(--main-color);
+}
+
+button.accordion-button span {
+    color: var(--light-blue);
+}
+
+button.accordion-button[aria-expanded="true"],
+button.accordion-button:hover {
+    color: var(--light-blue) !important;
+    background-color: unset;
+}
+
+/* Start Skills */
+section.skills h2 {
+    color: var(--dark-blue);
+}
+
+section div.skills-progress p {
+    color: var(--dark-blue);
+    line-height: 0.1;
+}
+
+section div.progress {
+    height: 10px;
+    border-radius: unset;
+}
+
+section div.progress-bar {
+    background-color: var(--dark-blue);
+}
+
+/* Start Services */
+div.services-cards i {
+    color: var(--light-blue);
+}
+
+div.services-cards h2 {
+    color: var(--dark-blue);
+}
+
+/* Start Call To Action */
+section.call-section {
+    background-color: var(--transparent-color);
+}
+
+section.call-section a:hover {
+    background-color: var(--light-blue);
+    
+}
+
+
+/* Start Portfolio */
+section.portfolio a.active,
+section.portfolio a:hover,
+section.portfolio a.active:active {
+    background-color: var(--light-blue);
+    color: #fff;
+}
+
+@media (min-width: 768px) {
+    div.last-col {
+        transform: translateY(-475px);
+    }
+}
+
+@media (min-width: 992px) {
+    div.last-col {
+        transform: translateY(0px);
+    }
+}
+
+div.portfolio-img img {
+    transition: transform 500ms linear;
+}
+
+div.portfolio-img img:hover {
+    transform: scale(1.3);
+}
+
+div.small-bar {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    opacity: 0;
+    background-color: var(--title-blue);
+    transition: all 500ms linear;
+}
+
+div.small-bar a:hover {
+    background-color: unset;
+}
+
+.portfolio-img:hover .small-bar {
+    opacity: .8;
+}
+
+/* Start Team */
+section.team h3 {
+    color: var(--dark-blue);
+}
+
+.img-box {
+    height: fit-content;
+    max-height: 200px;
+    max-width: 200px;
+}
+
+div.social-icons i {
+    background-color: var(--extra-light-blue);
+    color: var(--main-color);
+    transition: all 250ms linear;
+}
+
+div.social-icons i:hover {
+    background-color: var(--light-blue);
+    color: #fff;
+}
+
+/* Start Pricing */
+div.pricing-card h4 {
+    color: var(--main-color);
+}
+
+/* Pricing Cards Borders */
+
+div.pricing-card div.card {
+    transition: border 250ms linear;
+}
+
+div.pricing-card div.card:nth-child(2),
+div.pricing-card div.card:not(:nth-child(2)):hover {
+    border: none;
+    border-top: 5px solid var(--light-blue);
+}
+
+div.pricing-card div.card:not(:nth-child(2)) {
+    border: none;
+    border-top: 5px solid #fff;
+}
+
+/* Ends Pricing Cards Borders */
+
+/* Pricing Buttons */
+div.pricing-card div.card:not(:nth-child(2)) a {
+    border: 1px solid var(--light-blue);
+    color: var(--light-blue);
+    transition: all 250ms linear;
+}
+
+div.pricing-card div.card:not(:nth-child(2)) a:hover,
+div.pricing-card div.card:nth-child(2) a {
+    background-color: var(--light-blue);
+    color: #fff;
+}
+
+/* Ends Buttons */
+
+div.pricing-card div.price p:first-child {
+    color: var(--dark-blue);
+    font-size: 40px;
+}
+
+div.pricing-card div.price p span:first-child {
+    font-size: 24px;
+    position: relative;
+    top: -15px;
+}
+
+div.pricing-card div.price p span:last-child {
+    color: var(--light-blue);
+    font-size: initial;
+}
+
+div.pricing-card ul li {
+    list-style: none;
+    position: relative;
+}
+
+div.pricing-card ul li::before {
+    display: inline-block;
+    position: absolute;
+    font-family: FontAwesome;
+    left: -25px;
+}
+
+div.pricing-card ul li:not(.text-decoration-line-through):before {
+    content: "\f00c";
+    color: var(--green-color);
+}
+
+div.pricing-card ul li.text-decoration-line-through:before {
+    content: "\f00d";
+    color: var(--darker-gray);
+}
+
+div.pricing-card ul li.text-decoration-line-through {
+    color: var(--darker-gray);
+}
+
+/* F&A Questions */
+@media (min-width: 768px) {
+    div.question-accordian {
+        max-width: 75%;
+    }
+}
+
+/* Start Contact */
+
+/* Contact Info */
+li.info i {
+    left: -15px;
+    top: -10px;
+    background-color: var(--icon-bg);
+    color: var(--light-blue);
+}
+
+li.info h5 {
+    color: var(--main-color);
+}
+
+li.info p {
+    color: var(--dark-blue);
+}
+
+/* Ends Contact Info */
+section.contact .card {
+    border: none;
+    border-top: 3px solid var(--secondary-color);
+    border-bottom: 3px solid var(--secondary-color);
+}
+
+@media (min-width: 992px) {
+    section.contact .card {
+        min-height: 560px;
+    }
+}
+
+/* Map iframe */
+iframe#gmap_canvas {
+    width: 100%;
+    min-height: 250px;
+}
+
+/* Ends Map iframe */
+
+/* Form */
+section.contact form button {
+    transition: all 500ms linear;
+}
+
+/* Ends Form */
+
+/* Start Newsletter */
+.simple-title h2 {
+    color: var(--main-color);
+}
+
+@media (min-width: 768px) {
+    section .input-group {
+        max-width: 50%;
+    }
+}
+
+section.newsletter input {
+    z-index: 1 !important;
+    /* Default value of Bootstrap is 5 */
+}
+
+section.newsletter button {
+    background-color: var(--secondary-color);
+    left: -40px;
+    z-index: 2;
+}
+
+
+/* Start Ending */
+
+.ending-links div.nav-links li::before {
+    display: inline-block;
+    position: relative;
+    content: "\f054";
+    font-family: FontAwesome;
+    font-size: 12px;
+    color: var(--secondary-color);
+    left: -10px;
+}
+
+.ending-links h3,
+.ending-links h5 {
+    color: var(--main-color);
+}
+
+.ending-links li,
+.ending-links a,
+.ending-links p {
+    text-decoration: none;
+    color: var(--darker-gray);
+    transition: all 250ms linear;
+}
+
+.ending-links a:hover,
+.ending-links span {
+    color: #000;
+    font-weight: 600;
+}
+
+.ending-links a i {
+    color: #fff;
+    background-color: var(--secondary-color);
+    transition: background-color 250ms linear;
+}
+
+.ending-links a i:hover {
+    background-color: var(--blue-hover);
+}
+
+/* Footer */
+footer {
+    background-color: var(--main-color);
+}
+
+footer a {
+    color: var(--secondary-color);
+}
