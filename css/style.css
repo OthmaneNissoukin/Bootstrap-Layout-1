@@ -6,6 +6,7 @@
     --shadow-gray: #f3f5fa;
     --dark-blue: #37517e;
     --light-gray: #afb9cb;
+    --text-color: #575757;
     --title-blue: #36507c;
     --light-blue: #47b2e4;
     --extra-light-blue: #eff2f8;
@@ -16,11 +17,14 @@
     --icon-bg: #E7F5FB;
 }
 
+* {
+    font-family: 'Open Sans', sans-serif;
+}
+
 body {
     background-image: url("../images/cta-bg.jpg");
     background-size: cover;
     background-attachment: fixed;
-    font-family: 'Open Sans', sans-serif;
 }
 
 /* Constant Components */
@@ -31,6 +35,13 @@ body {
 
 .my-primary-btn:hover {
     background-color: var(--blue-hover);
+}
+
+.about p, .about, li,
+.skills p.skill-description,
+.services-cards p,
+.regular-text {
+    color: var(--text-color);
 }
 
 /* Done Compenents */
@@ -46,9 +57,25 @@ section.showcase {
     }
 }
 
-@media (max-width: 786px) {
+@media (max-width: 768px) {
     .hero-image {
         width: 100% !important;
+    }
+}
+
+@media (min-width: 768px) {
+    .hero-image {
+        animation: floating 5s infinite alternate ease-in-out;
+    }
+
+    @keyframes floating {
+        from {
+            transform: translateY(20px);
+        }
+
+        to {
+            transform: translateY(-40px);
+        }
     }
 }
 
@@ -123,7 +150,6 @@ section.about ul li::before {
     color: var(--secondary-color);
 }
 
-
 /* Start Why Us */
 section.why-us {
     background-color: var(--shadow-gray);
@@ -167,12 +193,32 @@ section div.progress-bar {
 }
 
 /* Start Services */
+
+div.card, h2.service-heading {
+    transition: all 500ms linear;
+}
+
 div.services-cards i {
     color: var(--light-blue);
 }
 
-div.services-cards h2 {
+div.services-cards h2.service-heading {
     color: var(--dark-blue);
+}
+
+div.services-cards p.card-description,
+section.team p.instructor-description {
+    font-size: 15px;
+}
+
+@media (min-width: 768px) {
+    .card:hover {
+        transform: translateY(-10px);
+    }
+
+    .card:hover .service-heading {
+        color: var(--light-blue);
+    }
 }
 
 /* Start Call To Action */
@@ -233,6 +279,7 @@ div.small-bar a:hover {
 }
 
 /* Start Team */
+/* Note: Team transition is using the same effect of services boxes since we give them same class 'card' */
 section.team h3 {
     color: var(--dark-blue);
 }
@@ -438,7 +485,7 @@ section.newsletter button {
 
 .ending-links a:hover,
 .ending-links span {
-    color: #000;
+    color: var(--light-blue);
     font-weight: 600;
 }
 
