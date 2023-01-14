@@ -64,7 +64,7 @@ section.showcase {
 }
 
 @media (min-width: 768px) {
-    .hero-image {
+    section.showcase .hero-image {
         animation: floating 5s infinite alternate ease-in-out;
     }
 
