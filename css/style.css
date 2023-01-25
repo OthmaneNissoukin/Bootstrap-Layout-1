@@ -22,9 +22,10 @@
 }
 
 body {
-    background-image: url("../images/cta-bg.jpg");
+    /* background-image: url("../images/cta-bg.jpg");
     background-size: cover;
-    background-attachment: fixed;
+    background-attachment: fixed; */
+    position: relative;
 }
 
 /* Constant Components */
@@ -42,6 +43,12 @@ body {
 .services-cards p,
 .regular-text {
     color: var(--text-color);
+}
+
+div.scroll-up {
+    position: sticky;
+    top: 85%;
+    z-index: 1000;
 }
 
 /* Done Compenents */
@@ -212,25 +219,25 @@ section.team p.instructor-description {
 }
 
 @media (min-width: 768px) {
-    .card:hover {
+    .card:hover:not(.contact .card) {
         transform: translateY(-10px);
     }
 
-    .card:hover .service-heading {
+    .card:hover:not(.contact .card) .service-heading {
         color: var(--light-blue);
     }
 }
 
 /* Start Call To Action */
 section.call-section {
-    background-color: var(--transparent-color);
+    background-attachment: fixed;
+    background-size: cover;
+    background-image: linear-gradient(var(--transparent-color),var(--transparent-color)), url("../images/cta-bg.jpg");
 }
 
 section.call-section a:hover {
     background-color: var(--light-blue);
-    
 }
-
 
 /* Start Portfolio */
 section.portfolio a.active,
@@ -309,7 +316,7 @@ div.pricing-card h4 {
 /* Pricing Cards Borders */
 
 div.pricing-card div.card {
-    transition: border 250ms linear;
+    transition: all 250ms linear;
 }
 
 div.pricing-card div.card:nth-child(2),
