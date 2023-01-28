@@ -1,6 +1,6 @@
 
 let btn = document.getElementById("showMore");
-let pictures = document.getElementsByClassName("portfolio-extra");
+let pictures = document.querySelectorAll(".portfolio-extra");
 
 btn.onclick = function() {
     btn.classList.toggle("show-elements");
@@ -8,14 +8,14 @@ btn.onclick = function() {
     if (btn.classList.contains("show-elements")) {
         btn.innerText = "Show Less";
     
-        Array.from(pictures).forEach(ele => {
+        pictures.forEach(ele => {
             ele.classList.remove("extra-content");
         });
         
     } else {
         btn.innerText = "Show More";
         
-        Array.from(pictures).forEach(ele => {
+        pictures.forEach(ele => {
             ele.classList.add("extra-content");
         });
     }
